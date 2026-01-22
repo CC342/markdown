@@ -1,0 +1,174 @@
+/* ==================================================
+   主题：Phycat Sky (靠左对齐修正版)
+   修改：引用和警告块不再居中，改为靠左
+   ================================================== */
+
+/* 1. 顶层容器 */
+.wx-content, container {
+  background-color: #ffffff;
+  
+  /* 背景：纯 CSS 画出的交叉十字纹 */
+  background-image: 
+    linear-gradient(45deg, transparent 48%, rgba(52, 152, 219, 0.08) 48%, rgba(52, 152, 219, 0.08) 52%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(52, 152, 219, 0.08) 48%, rgba(52, 152, 219, 0.08) 52%, transparent 52%);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  
+  /* 容器边框 */
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+  
+  padding: 30px 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2c3e50;
+  text-align: justify;
+}
+
+/* 深色模式适配 */
+.dark container {
+  background-color: #1e2022;
+  border-color: rgba(52, 152, 219, 0.3);
+  color: #c9d1d9;
+}
+
+/* 2. 引用块 (靠左对齐) */
+blockquote {
+  display: table !important; /* 保持撑开 */
+  
+  /* [核心修改] auto 改为 0，即靠左对齐 */
+  margin: 20px 0 !important; 
+  width: 95% !important; /*稍微留一点右边距，不贴死 */
+  
+  /* Phycat 冰蓝配色 */
+  background-color: rgba(52, 152, 219, 0.06) !important;
+  border: 1px solid rgba(52, 152, 219, 0.15) !important;
+  border-left: 4px solid #3498db !important;
+  
+  border-radius: 8px !important;
+  padding: 12px 18px !important;
+  color: #5d6d7e !important;
+  box-shadow: none !important;
+}
+blockquote p { margin: 0 !important; }
+
+/* 3. 分割线 (虚线) */
+hr {
+  display: block;
+  border: 0;
+  margin: 30px auto;
+  height: 0;
+  width: 100%;
+  border-bottom: 2px dashed #aed6f1; 
+  background: none;
+}
+
+/* 4. 标题 (左对齐 + 图标) */
+h1 {
+  display: block;
+  text-align: left;
+  margin: 40px 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3498db;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+h2 {
+  display: inline-block;
+  margin: 30px 0 20px;
+  padding: 6px 20px;
+  background: linear-gradient(to right, #85c1e9, #3498db, #85c1e9);
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #3498db;
+  margin: 25px 0 15px;
+  padding-left: 12px;
+  border-left: 4px solid #3498db;
+  background: transparent;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 20px 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid #e1e4e8;
+}
+
+/* 5. GFM 警告块 (靠左对齐) */
+
+/* 通用设置：靠左 */
+.alert-note, .alert-tip, .alert-warning, .alert-important, .alert-caution {
+  display: table !important; /* 确保背景显示 */
+  
+  /* [核心修改] 靠左对齐 */
+  margin: 20px 0 !important; 
+  width: 95% !important;
+  
+  padding: 15px;
+  border-radius: 6px;
+}
+
+/* [Note] 蓝色 */
+.alert-note {
+  background-color: #ebf5fb; 
+  border: 1px solid #aed6f1; 
+}
+.alert-title-note { 
+  color: #2980b9; font-weight: bold; margin-bottom: 8px; display: block; 
+}
+
+/* [Tip] 绿色 */
+.alert-tip {
+  background-color: #e9f7ef; 
+  border: 1px solid #abebc6; 
+}
+.alert-title-tip { 
+  color: #27ae60; font-weight: bold; margin-bottom: 8px; display: block; 
+}
+
+/* [Warning] 橙色 */
+.alert-warning {
+  background-color: #fef9e7; 
+  border: 1px solid #f9e79f; 
+}
+.alert-title-warning { 
+  color: #d4ac0d; font-weight: bold; margin-bottom: 8px; display: block; 
+}
+
+/* [Important] 紫色 */
+.alert-important {
+  background-color: #f4ecf7; 
+  border: 1px solid #d2b4de; 
+}
+.alert-title-important { 
+  color: #8e44ad; font-weight: bold; margin-bottom: 8px; display: block; 
+}
+
+/* [Caution] 红色 */
+.alert-caution {
+  background-color: #fdedec; 
+  border: 1px solid #f5b7b1; 
+}
+.alert-title-caution { 
+  color: #c0392b; font-weight: bold; margin-bottom: 8px; display: block; 
+}
+
+/* 6. 其他 */
+ul, ol { margin: 15px 0 15px 8px; padding-left: 1.2em; }
+li { margin: 6px 0; }
+li::marker { color: #3498db; font-weight: bold; }
+a { color: #3498db; text-decoration: none; border-bottom: 1px dashed #3498db; }
+strong { color: #3498db; font-weight: bold; }
+code { background-color: #ebf5fb; color: #1a5276; padding: 2px 5px; border-radius: 3px; font-family: Menlo, Monaco, Consolas, monospace; }
