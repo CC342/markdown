@@ -1,11 +1,20 @@
 /* ==================================================
-   主题：Phycat Sky (靠左对齐修正版)
-   修改：引用和警告块不再居中，改为靠左
+   主题：Phycat Sky (靠左对齐 + 加粗跟随主题色版)
+   修改：
+   1. 引用和警告块靠左 (保持你原样)
+   2. 加粗字体 (strong) 可随编辑器主题色按钮变色
    ================================================== */
 
 /* 1. 顶层容器 */
 .wx-content, container {
   background-color: #ffffff;
+  
+  /* 背景：纯 CSS 画出的交叉十字纹 */
+  background-image: 
+    linear-gradient(45deg, transparent 48%, rgba(52, 152, 219, 0.08) 48%, rgba(52, 152, 219, 0.08) 52%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(52, 152, 219, 0.08) 48%, rgba(52, 152, 219, 0.08) 52%, transparent 52%);
+  background-size: 24px 24px;
+  background-position: 0 0;
   
   /* 容器边框 */
   border: 1px solid rgba(52, 152, 219, 0.2);
@@ -32,7 +41,7 @@ blockquote {
   
   /* [核心修改] auto 改为 0，即靠左对齐 */
   margin: 20px 0 !important; 
-  width: 100% !important; /*稍微留一点右边距，不贴死 */
+  width: 95% !important; /*稍微留一点右边距，不贴死 */
   
   /* Phycat 冰蓝配色 */
   background-color: rgba(52, 152, 219, 0.06) !important;
@@ -107,7 +116,7 @@ h4 {
   
   /* [核心修改] 靠左对齐 */
   margin: 20px 0 !important; 
-  width: 100% !important;
+  width: 95% !important;
   
   padding: 15px;
   border-radius: 6px;
@@ -163,5 +172,11 @@ ul, ol { margin: 15px 0 15px 8px; padding-left: 1.2em; }
 li { margin: 6px 0; }
 li::marker { color: #3498db; font-weight: bold; }
 a { color: #3498db; text-decoration: none; border-bottom: 1px dashed #3498db; }
-strong { color: #3498db; font-weight: bold; }
+
+/* [这里修改了] 加粗字体：跟随 OpenWrite 主题色 */
+strong { 
+  color: var(--md-primary-color) !important; 
+  font-weight: bold; 
+}
+
 code { background-color: #ebf5fb; color: #1a5276; padding: 2px 5px; border-radius: 3px; font-family: Menlo, Monaco, Consolas, monospace; }
