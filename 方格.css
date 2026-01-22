@@ -110,7 +110,7 @@ blockquote {
   padding: 12px 18px;
   color: #2c3e50;
   box-shadow: none;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 /* 列表项 */
